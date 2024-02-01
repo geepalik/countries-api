@@ -1,9 +1,12 @@
 package com.nationapi.nation.api.services;
 
 import com.nationapi.nation.api.models.Country;
+import com.nationapi.nation.api.models.dto.MaxGdpPerPopulationDto;
 
-import java.util.Collection;
+import java.util.List;
 
 public interface CountryService {
-    Collection<Country> list();
+    List<Country> list();
+
+    List<MaxGdpPerPopulationDto> getMaxGdpPerPopulation();
 }

@@ -30,4 +30,17 @@ public class CountryController {
                         .build()
         );
     }
+
+    @GetMapping("/countries-stats-max-gdp")
+    public ResponseEntity<Response> getMaxGdpPerPopulationRatio(){
+        return ResponseEntity.ok(
+                Response.builder()
+                        .timestamp(LocalDateTime.now())
+                        .data(Map.of("stats", countryService.getMaxGdpPerPopulation()))
+                        .message("Countries stats and maximum GDP per population ration along the years")
+                        .status(HttpStatus.OK)
+                        .statusCode(HttpStatus.OK.value())
+                        .build()
+        );
+    }
 }

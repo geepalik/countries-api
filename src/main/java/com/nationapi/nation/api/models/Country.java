@@ -7,7 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
-import java.util.Collection;
+import java.util.List;
 
 @Entity
 @Table(name = "countries")
@@ -41,5 +41,5 @@ public class Country {
             name = "country_languages",
             joinColumns = @JoinColumn(name = "country_id", referencedColumnName = "country_id"),
             inverseJoinColumns = @JoinColumn(name = "language_id", referencedColumnName = "language_id"))
-    private Collection<Language> languages;
+    private List<Language> languages;
 }
