@@ -10,10 +10,11 @@ import java.time.LocalDate;
 import java.util.Collection;
 
 @Entity
+@Table(name = "countries")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Countries {
+public class Country {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "country_id")
@@ -40,5 +41,5 @@ public class Countries {
             name = "country_languages",
             joinColumns = @JoinColumn(name = "country_id", referencedColumnName = "country_id"),
             inverseJoinColumns = @JoinColumn(name = "language_id", referencedColumnName = "language_id"))
-    private Collection<Languages> languages;
+    private Collection<Language> languages;
 }

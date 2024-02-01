@@ -1,7 +1,7 @@
 package com.nationapi.nation.api.controllers;
 
 import com.nationapi.nation.api.output.Response;
-import com.nationapi.nation.api.services.implementation.CountriesServiceImpl;
+import com.nationapi.nation.api.services.implementation.CountryServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,15 +15,15 @@ import java.util.Map;
 @RestController
 @RequestMapping("/nation-api")
 @RequiredArgsConstructor
-public class CountriesController {
-    private final CountriesServiceImpl countriesService;
+public class CountryController {
+    private final CountryServiceImpl countryService;
 
     @GetMapping("/countries-languages")
     public ResponseEntity<Response> getCountries(){
         return ResponseEntity.ok(
                 Response.builder()
                         .timestamp(LocalDateTime.now())
-                        .data(Map.of("countries", countriesService.list()))
+                        .data(Map.of("countries", countryService.list()))
                         .message("Countries and their languages")
                         .status(HttpStatus.OK)
                         .statusCode(HttpStatus.OK.value())
