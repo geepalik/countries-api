@@ -12,11 +12,6 @@ import java.util.Map;
 @SuperBuilder
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Response {
-    protected LocalDateTime timestamp;
-    protected int statusCode;
-    protected HttpStatus status;
-    protected String reason; //reason for error, if any
     protected String message;
-    protected String developerMessage;
     protected Map<?, ?> data; //response data
 }
