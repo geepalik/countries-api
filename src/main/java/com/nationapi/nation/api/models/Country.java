@@ -34,7 +34,12 @@ public class Country {
     private String country_code3;
     @Column(name = "region_id")
     @JsonIgnore
-    private Long region_id;
+    private Long regionId;
+    @ManyToOne
+    @MapsId("regionId")
+    @JoinColumn(name = "region_id", insertable = false, updatable = false)
+    @JsonIgnore
+    private Region region;
 
     @ManyToMany
     @JoinTable(
