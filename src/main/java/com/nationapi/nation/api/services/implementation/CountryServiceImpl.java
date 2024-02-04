@@ -74,7 +74,7 @@ public class CountryServiceImpl implements CountryService {
         List<GlobalStatsDto> paginatedResults = getGlobalStatsData(getGlobalStatsRequestDto, offset);
 
         PaginatedResponse<GlobalStatsDto> paginatedResponse = new PaginatedResponse<>();
-        paginatedResponse.setStats(paginatedResults);
+        paginatedResponse.setGlobalStats(paginatedResults);
         paginatedResponse.setCurrentPage(offset / getGlobalStatsRequestDto.getLimit() + 1);
         paginatedResponse.setTotalPages(totalPages);
 
