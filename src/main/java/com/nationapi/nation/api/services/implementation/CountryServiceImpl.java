@@ -130,6 +130,7 @@ public class CountryServiceImpl implements CountryService {
         jpqlQuery.append(" AND r.region_id = :regionId");
         jpqlQuery.append(" AND cs.id.year >= :from");
         jpqlQuery.append(" AND cs.id.year <= :to");
+        jpqlQuery.append(" ORDER BY cs.id.year ASC");
         return jpqlQuery;
     }
 
