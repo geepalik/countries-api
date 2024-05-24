@@ -5,5 +5,5 @@ In src/main/resources/application.yml, in sources spring.datasource change the f
 2. url
 3. username
 
-to those of a database instance that has the data described in nation.sql.
+to those of a database instance that has the data.
 Then run the application
